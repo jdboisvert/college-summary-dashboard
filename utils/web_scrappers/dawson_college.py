@@ -11,6 +11,7 @@ from pandas import DataFrame
 from constants.dawson_college import PROGRAMS_LISTING_URL, MAIN_WEBSITE_URL
 from utils.dataclasses.dashboard import Program, CollegeMetrics
 from utils.dataclasses.dawson_college import ProgramPageData
+from utils.models.college_metrics import College
 
 logger = logging.getLogger(__name__)
 
@@ -152,6 +153,7 @@ class DawsonCollegeWebsiteScrapper:
         del newest_programs_json['index']
 
         college_metrics = CollegeMetrics(
+            college=College.DAWSON_COLLEGE,
             total_programs_offered=total_programs_offered,
             number_of_programs=number_of_programs,
             number_of_profiles=number_of_profiles,

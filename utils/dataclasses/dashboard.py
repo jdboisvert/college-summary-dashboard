@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from typing import List, Dict
+
+from constants import College
 
 
 @dataclass(frozen=True)
@@ -12,6 +13,7 @@ class Program:
 
 @dataclass(frozen=True)
 class CollegeMetrics:
+    college: College
     total_programs_offered: int
 
     number_of_programs: int
