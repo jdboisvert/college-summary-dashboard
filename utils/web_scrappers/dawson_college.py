@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 
 import requests
@@ -8,10 +9,12 @@ import logging
 
 from pandas import DataFrame
 
+from constants import College
 from constants.dawson_college import PROGRAMS_LISTING_URL, MAIN_WEBSITE_URL
 from utils.dataclasses.dashboard import Program, CollegeMetrics
 from utils.dataclasses.dawson_college import ProgramPageData
-from utils.models.college_metrics import College
+
+from utils.datastore import CollegeMetricsDataStore
 
 logger = logging.getLogger(__name__)
 
@@ -152,21 +155,20 @@ class DawsonCollegeWebsiteScrapper:
         newest_programs_json = json.loads(newest.to_json(orient='split'))
         del newest_programs_json['index']
 
-        college_metrics = CollegeMetrics(
-            college=College.DAWSON_COLLEGE,
-            total_programs_offered=total_programs_offered,
-            number_of_programs=number_of_programs,
-            number_of_profiles=number_of_profiles,
-            number_of_disciplines=number_of_disciplines,
-            number_of_special_studies=number_of_special_studies,
-            number_of_general_studies=number_of_general_education,
-            total_year_counts=total_year_counts,
-            programs=json.dumps(newest_programs_json),
-            number_of_students=number_of_students,
-            number_of_faculty=number_of_faculty
+        CollegeMetricsDataStore.save(
+            college_metrics=CollegeMetrics(
+                date=datetime.now().isoformat(),
+                college=College.DAWSON_COLLEGE.name,
+                total_programs_offered=total_programs_offered,
+                number_of_programs=number_of_programs,
+                number_of_profiles=number_of_profiles,
+                number_of_disciplines=number_of_disciplines,
+                number_of_special_studies=number_of_special_studies,
+                number_of_general_studies=number_of_general_education,
+                total_year_counts=total_year_counts,
+                programs=json.dumps(newest_programs_json),
+                number_of_students=number_of_students,
+                number_of_faculty=number_of_faculty
+            )
         )
-
-        # TODO Make actual save to a proper datastore.
-        with open('static/data/dawson_programs_stats.json', 'w') as f:
-            json.dump(college_metrics.__dict__, f)
 

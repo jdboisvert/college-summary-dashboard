@@ -1,7 +1,5 @@
 from dataclasses import dataclass
 
-from constants import College
-
 
 @dataclass(frozen=True)
 class Program:
@@ -13,7 +11,8 @@ class Program:
 
 @dataclass(frozen=True)
 class CollegeMetrics:
-    college: College
+    college: str
+    date: str
     total_programs_offered: int
 
     number_of_programs: int
