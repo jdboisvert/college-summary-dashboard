@@ -29,7 +29,3 @@ class CollegeMetrics:
     @property
     def number_of_students_per_faculty(self) -> float:
         return round((self.number_of_students / self.number_of_faculty), 2)
-
-
-
-

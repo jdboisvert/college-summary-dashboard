@@ -78,7 +78,7 @@ function makeTableLatestPagination() {
 
 }
 
-//Populate the table with JSON data 
+//Populate the table with JSON data
 function populateTable(stats) {
 
     dataStr = stats['Programs ordered newest'];
@@ -107,7 +107,7 @@ function populateTable(stats) {
 
 }
 
-//Simply load JSON file into memory 
+//Simply load JSON file into memory
 function loadJSONData() {
 
     $.getJSON("/static/data/dawson_programs_stats.json", function(json) {
@@ -136,7 +136,7 @@ function generalStats(stats) {
 //When document is loaded
 $(document).ready(function() {
 
-    //Load JSON file with data 
+    //Load JSON file with data
     loadJSONData();
 
 

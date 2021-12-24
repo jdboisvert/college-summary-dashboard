@@ -1,5 +1,5 @@
-# College Summary Dashboard 
-A simple web application that shows you the latest stats for a given school (currently Dawson College). 
+# College Summary Dashboard
+A simple web application that shows you the latest stats for a given school (currently Dawson College).
 
 ## Getting started
 
@@ -33,6 +33,10 @@ flask run
 ## Contributing
 
 ### Initialize pre-commit
-TODO
+`pre-commit` is used to format commits according to our coding standards. Initializing it here will install hook scripts into your local git repo.
+```
+pre-commit install
+```
+
 ### Running Tests
 TODO

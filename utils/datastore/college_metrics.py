@@ -8,13 +8,13 @@ from utils.datastore import db
 class CollegeMetricsDataStore:
     @classmethod
     def get_latest(cls) -> CollegeMetrics:
-        result = db.college_metrics.find_one({}, sort=[('$natural', -1)])
+        result = db.college_metrics.find_one({}, sort=[("$natural", -1)])
 
         return CollegeMetrics(**result)
 
     @classmethod
     def get_all(cls) -> List[CollegeMetrics]:
-        results = db.college_metrics.find({}).sort([('$natural', -1)])
+        results = db.college_metrics.find({}).sort([("$natural", -1)])
 
         return [CollegeMetrics(**result) for result in results]
 
