@@ -39,4 +39,8 @@ pre-commit install
 ```
 
 ### Running Tests
-TODO
+`pytest` is used for conducting unit tests (should have been installed via the requirements.txt).
+To run tests simply run the command:
+```
+pytest
+```
