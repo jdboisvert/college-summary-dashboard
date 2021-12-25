@@ -3,7 +3,6 @@ from typing import List
 
 import requests
 from bs4 import BeautifulSoup, Tag
-import json
 import pandas as pd
 import logging
 
@@ -50,7 +49,7 @@ class DawsonCollegeWebsiteScrapper:
 
         return ProgramPageData(date=date_modified)
 
-    def __get_program_details(self, program_url: str, listed_program: Tag) -> Program:
+    def __get_program_details(self, program_url: str, listed_program: "Tag") -> Program:
         program_page_data = self.__def_parse_program_page(program_url)
         program_type = listed_program.find(class_="program-type")
         if program_type:
@@ -162,12 +161,6 @@ class DawsonCollegeWebsiteScrapper:
         programs_data_frame["year"] = years
         total_year_counts = programs_data_frame["year"].value_counts()
 
-        newest = programs_data_frame.sort_values(by="date", ascending=False)
-        newest = (newest.drop("year", axis=1)).reset_index(drop=True)
-
-        newest_programs_json = json.loads(newest.to_json(orient="split"))
-        del newest_programs_json["index"]
-
         CollegeMetricsDataStore.save(
             college_metrics=CollegeMetrics(
                 date=datetime.now().isoformat(),
@@ -179,7 +172,7 @@ class DawsonCollegeWebsiteScrapper:
                 number_of_special_studies=number_of_special_studies,
                 number_of_general_studies=number_of_general_education,
                 total_year_counts=total_year_counts,
-                programs=json.dumps(newest_programs_json),
+                programs=programs,
                 number_of_students=number_of_students,
                 number_of_faculty=number_of_faculty,
             )

@@ -1,40 +1,31 @@
 function getYearValues(stats) {
-
-    let yearCountsStr = stats['Year Counts'];
-    let yearCountsUnFormatted = yearCountsStr.split(',');
-    let yearCounts = {};
+    const yearCountsStr = stats['Year Counts'];
+    const yearCountsUnFormatted = yearCountsStr.split(',');
+    const yearCounts = {};
 
     for (let i = 0; i < yearCountsUnFormatted.length; i++) {
 
-        let values = yearCountsUnFormatted[i].split(':');
-        //Ensure only numbers are stored
+        const values = yearCountsUnFormatted[i].split(':');
         yearCounts[values[0].replace(/[^0-9]/g, '')] = values[1].replace(/[^0-9]/g, '');
 
     }
 
     return yearCounts;
-
 }
 
+function makeYearlyPieChart() {
+    const newestProgramsElement = document.getElementById("newestPrograms")
 
-//Function used to make pie chart showing distribution of newest program counts
-function makeYearlyPieChart(stats) {
-
-    //Get dictonayr of values
-    let yearlyStats = getYearValues(stats);
-    //Get key values
+    const yearlyStats = getYearValues(newestProgramsElement.dataset.counts);
     const keys = Object.keys(yearlyStats);
 
     //Build an array of the values that match the key
     values = []
     for (let i = 0; i < keys.length; i++) {
-
         values.push(yearlyStats[keys[i]]);
-
     }
 
-    //Build pie graph
-    var ctx = document.getElementById("newestPrograms").getContext('2d');
+    var ctx = newestProgramsElement.getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -50,8 +41,7 @@ function makeYearlyPieChart(stats) {
 
 }
 
-function makeTableLatestPagination() {
-
+function makeLatestProgramsTablePaginate() {
     $('#latestPrograms').after('<div id="nav"></div>');
     var rowsShown = 7;
     var rowsTotal = $('#latestPrograms tbody tr').length;
@@ -78,66 +68,7 @@ function makeTableLatestPagination() {
 
 }
 
-//Populate the table with JSON data
-function populateTable(stats) {
-
-    dataStr = stats['Programs ordered newest'];
-    let dataObj = JSON.parse(dataStr);
-
-    tableBody = document.getElementById("tableBody");
-    //Just to know how many programs there are
-    numberOfItems = Object.keys(dataObj['data']).length
-    //Populating the table
-    for (let i = 0; i < numberOfItems; i++) {
-        let tr = document.createElement('tr');
-        let actualDate = new Date(dataObj['data'][i][0]);
-        let cleanDate = actualDate.getDate() + "/" + (actualDate.getMonth() + 1) + "/" + actualDate.getFullYear();
-        let programName = dataObj['data'][i][1];
-        let programType = dataObj['data'][i][2];
-        let programUrl = dataObj['data'][i][3];
-        let currentRow = "<td>" + programName + "</td><td>" + programType + "</td><td>" + cleanDate + "</td><td><a href=" + programUrl + " target=\"blank\">More Info</a>";
-        tr.innerHTML = currentRow;
-        tableBody.append(tr);
-
-    }
-
-
-    //Make table have pages
-    makeTableLatestPagination();
-
-}
-
-//Simply load JSON file into memory
-function loadJSONData() {
-
-    $.getJSON("/static/data/dawson_programs_stats.json", function(json) {
-        let stats = json;
-        generalStats(stats);
-        makeYearlyPieChart(stats);
-        populateTable(stats);
-    });
-
-}
-
-function generalStats(stats) {
-
-    $("#totalCount").html(stats['Total']);
-    $("#programCount").html(stats['Number of Programs']);
-    $("#profileCount").html(stats['Number of Profiles']);
-    $("#disciplineCount").html(stats['Number of Disciplines']);
-    $("#specialCount").html(stats['Number of Special']);
-    $("#generalEduCount").html(stats['Number of General']);
-    $("#studentCount").html(stats['Number of Students']);
-    $("#facultyCount").html(stats['Number of Faculty']);
-    $("#studentToFacultyRatio").html(stats['Number of Students per Faculty'] + ' : 1');
-
-}
-
-//When document is loaded
-$(document).ready(function() {
-
-    //Load JSON file with data
-    loadJSONData();
-
-
+document.addEventListener("DOMContentLoaded", function(event) {
+     makeLatestProgramsTablePaginate();
+     makeYearlyPieChart();
 });

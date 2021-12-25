@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import List
 
 
 @dataclass(frozen=True)
@@ -24,7 +25,7 @@ class CollegeMetrics:
     number_of_faculty: int
 
     total_year_counts: dict
-    programs: str
+    programs: List[Program]
 
     @property
     def number_of_students_per_faculty(self) -> float:

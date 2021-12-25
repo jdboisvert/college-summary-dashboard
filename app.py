@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
 from utils import datastore
+from utils.datastore import CollegeMetricsDataStore
 
 app = Flask(__name__, static_url_path="/static")
 
@@ -21,7 +22,9 @@ def about():
 
 @app.route("/", methods=["GET"])
 def dashboard():
-    return render_template("dashboard.html")
+    college_metrics = CollegeMetricsDataStore.get_latest()
+
+    return render_template("dashboard.html", college_metrics=college_metrics)
 
 
 if __name__ == "__main__":
