@@ -86,7 +86,7 @@
             <canvas id="newestPrograms" data-counts='{{college_metrics.total_year_counts}}'></canvas>
          </div>
          <div class="col text-center">
-            <p class="description">Programs sorted by most up to date</p>
+            <p class="description">Most up to date programs</p>
             <table id="latestPrograms" class="table table-striped table-bordered table-sm">
                <thead>
                   <tr>
@@ -97,7 +97,7 @@
                   </tr>
                </thead>
                <tbody id="tableBody">
-                    {% for program in sorted(college_metrics.programs, key=lambda program: program.modified_date, reverse=True)) %}
+                    {% for program in college_metrics.programs_sorted %}
                         <tr>
                             <td>{{program.name}}</td>
                             <td>{{program.type}}</td>

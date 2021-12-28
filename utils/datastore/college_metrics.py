@@ -2,22 +2,28 @@ from typing import List
 
 from utils.dataclasses import CollegeMetrics
 
-from utils.datastore import db
-
 
 class CollegeMetricsDataStore:
+    db = None
+
     @classmethod
     def get_latest(cls) -> CollegeMetrics:
-        result = db.college_metrics.find_one({}, sort=[("$natural", -1)])
+        result = cls.db.college_metrics.find_one({}, sort=[("$natural", -1)])
+        result.pop("_id")
 
         return CollegeMetrics(**result)
 
     @classmethod
     def get_all(cls) -> List[CollegeMetrics]:
-        results = db.college_metrics.find({}).sort([("$natural", -1)])
+        results = cls.db.college_metrics.find({}).sort([("$natural", -1)])
 
         return [CollegeMetrics(**result) for result in results]
 
     @classmethod
     def save(cls, college_metrics: CollegeMetrics):
-        db.college_metrics.insert_one(**college_metrics.__dict__)
+        college_metrics_dict = {
+            **college_metrics.__dict__,
+            "programs": [program.__dict__ for program in college_metrics.programs],
+        }
+
+        cls.db.college_metrics.insert_one(college_metrics_dict)

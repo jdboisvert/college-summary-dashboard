@@ -1,4 +1,5 @@
 function getYearValues(stats) {
+    console.log(stats)
     const yearCountsStr = stats['Year Counts'];
     const yearCountsUnFormatted = yearCountsStr.split(',');
     const yearCounts = {};
@@ -16,13 +17,15 @@ function getYearValues(stats) {
 function makeYearlyPieChart() {
     const newestProgramsElement = document.getElementById("newestPrograms")
 
-    const yearlyStats = getYearValues(newestProgramsElement.dataset.counts);
-    const keys = Object.keys(yearlyStats);
+    const yearlyStats = JSON.parse(newestProgramsElement.dataset.counts.replace(/'/g, '"'));
 
     //Build an array of the values that match the key
-    values = []
-    for (let i = 0; i < keys.length; i++) {
-        values.push(yearlyStats[keys[i]]);
+    const values = [];
+    const keys = [];
+    for (const year in yearlyStats) {
+        console.log(year);
+        keys.push(year);
+        values.push(yearlyStats[year]);
     }
 
     var ctx = newestProgramsElement.getContext('2d');

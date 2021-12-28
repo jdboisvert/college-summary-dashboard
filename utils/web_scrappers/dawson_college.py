@@ -79,16 +79,16 @@ class DawsonCollegeWebsiteScrapper:
         programs = []
         for listed_program in listed_programs:
             program_name = listed_program.find(class_="program-name")
-            if not programs:
+            if not program_name:
+                logger.info("Skipping since program name is not present.")
                 continue
 
             program_path = program_name.find("a")["href"]
             if program_path == "/programs/general-education":
-                # Not an actual program.
+                logger.info("Skipping since program path is a general education path.")
                 continue
 
             program_url = f"{MAIN_WEBSITE_URL}/{program_path}"
-
             try:
                 programs.append(
                     self.__get_program_details(
@@ -139,7 +139,9 @@ class DawsonCollegeWebsiteScrapper:
         programs_data_frame = pd.DataFrame(programs)
 
         # Change date to actual Timestamp type
-        programs_data_frame["date"] = pd.to_datetime(programs_data_frame["date"])
+        programs_data_frame["date"] = pd.to_datetime(
+            programs_data_frame["modified_date"]
+        )
 
         total_programs_offered = len(programs_data_frame)
         number_of_programs = self.__get_number_of_type(programs_data_frame, "Program")
@@ -156,14 +158,16 @@ class DawsonCollegeWebsiteScrapper:
 
         years = []
         for date in programs_data_frame["date"]:
-            years.append(date.year)
+            years.append(str(date.year))
 
         programs_data_frame["year"] = years
         total_year_counts = programs_data_frame["year"].value_counts()
 
+        print(total_year_counts.to_dict())
+
         CollegeMetricsDataStore.save(
             college_metrics=CollegeMetrics(
-                date=datetime.now().isoformat(),
+                date=datetime.now(),
                 college=College.DAWSON_COLLEGE.name,
                 total_programs_offered=total_programs_offered,
                 number_of_programs=number_of_programs,
@@ -171,7 +175,7 @@ class DawsonCollegeWebsiteScrapper:
                 number_of_disciplines=number_of_disciplines,
                 number_of_special_studies=number_of_special_studies,
                 number_of_general_studies=number_of_general_education,
-                total_year_counts=total_year_counts,
+                total_year_counts=total_year_counts.to_dict(),
                 programs=programs,
                 number_of_students=number_of_students,
                 number_of_faculty=number_of_faculty,
