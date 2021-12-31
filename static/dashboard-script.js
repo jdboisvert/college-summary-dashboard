@@ -15,7 +15,7 @@ function getYearValues(stats) {
 }
 
 function makeYearlyPieChart() {
-    const newestProgramsElement = document.getElementById("newestPrograms")
+    const newestProgramsElement = document.getElementById("newest-programs")
 
     const yearlyStats = JSON.parse(newestProgramsElement.dataset.counts.replace(/'/g, '"'));
 
@@ -23,7 +23,6 @@ function makeYearlyPieChart() {
     const values = [];
     const keys = [];
     for (const year in yearlyStats) {
-        console.log(year);
         keys.push(year);
         values.push(yearlyStats[year]);
     }
@@ -45,16 +44,19 @@ function makeYearlyPieChart() {
 }
 
 function makeLatestProgramsTablePaginate() {
-    $('#latestPrograms').after('<div id="nav"></div>');
+    // TODO remove jQuery logic here.
+    $('#latest-programs').after('<div id="nav"></div>');
     var rowsShown = 7;
-    var rowsTotal = $('#latestPrograms tbody tr').length;
+    var rowsTotal = $('#latest-programs tbody tr').length;
     var numPages = rowsTotal / rowsShown;
     for (i = 0; i < numPages; i++) {
         var pageNum = i + 1;
-        $('#nav').append('| <a href="#latestProgram" rel="' + i + '">' + pageNum + '</a> ');
+        const link = `${pageNum != 1 ? "| " : ""} <a href="#latest-program-anchor" rel="${i}">${pageNum} </a>`
+
+        $('#nav').append(link);
     }
-    $('#latestPrograms tbody tr').hide();
-    $('#latestPrograms tbody tr').slice(0, rowsShown).show();
+    $('#latest-programs tbody tr').hide();
+    $('#latest-programs tbody tr').slice(0, rowsShown).show();
     $('#nav a:first').addClass('active');
     $('#nav a').bind('click', function() {
 
@@ -63,7 +65,7 @@ function makeLatestProgramsTablePaginate() {
         var currPage = $(this).attr('rel');
         var startItem = currPage * rowsShown;
         var endItem = startItem + rowsShown;
-        $('#latestPrograms tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+        $('#latest-programs tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
         css('display', 'table-row').animate({
             opacity: 1
         }, 300);

@@ -44,14 +44,21 @@ hr {
 
 }
 
-.error-container {
+.text-container {
     display: table;
     width: 100%;
-    height: 50vh;
     text-align: center;
 }
 
-.error-message {
+.text-message {
 	  display: table-cell;
 	  vertical-align: middle;
+}
+
+.about-text-message {
+     vertical-align: middle;
+}
+
+#github-repository-link{
+   color: #DEF5F0;
 }
