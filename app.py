@@ -1,7 +1,12 @@
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
+from exceptions.dashboard import NoCollegeMetricsFoundError
 from utils.datastore import CollegeMetricsDataStore
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_url_path="/static")
 
@@ -19,9 +24,15 @@ def about():
 
 @app.route("/", methods=["GET"])
 def dashboard():
-    college_metrics = CollegeMetricsDataStore.get_latest()
+    try:
+        college_metrics = CollegeMetricsDataStore.get_latest()
 
-    return render_template("dashboard.html", college_metrics=college_metrics)
+        return render_template("dashboard.html", college_metrics=college_metrics)
+
+    except NoCollegeMetricsFoundError:
+        logger.error("No college metrics were found.")
+
+        return render_template("empty-dashboard.html")
 
 
 if __name__ == "__main__":

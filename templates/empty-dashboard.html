@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title> Welcome </title>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='load_style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="{{ url_for('static', filename='loader_script.js') }}"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light center">
+        <a class="navbar-brand" href="{{ url_for('dashboard') }}">Dashboard</a>
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="nav-link" href="{{ url_for('about') }}">About</a>
+         </li>
+          <li class="nav-item active">
+           <a class="nav-link"  href="https://github.com/jdboisvert/college-summary-dashboard" target="_blank">GitHub Repository</a>
+         </li>
+       </ul>
+      </nav>
+        <div class="error-container">
+                <h1 class="error-message">Error :( No data available.</h1>
+        </div>
+      <footer>
+         <h5>Creator : Jeffrey Boisvert</h5>
+      </footer>
+   </body>
+</html>

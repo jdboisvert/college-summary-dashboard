@@ -1,5 +1,6 @@
 from typing import List
 
+from exceptions.dashboard import NoCollegeMetricsFoundError
 from utils.dataclasses import CollegeMetrics
 
 
@@ -9,13 +10,19 @@ class CollegeMetricsDataStore:
     @classmethod
     def get_latest(cls) -> CollegeMetrics:
         result = cls.db.college_metrics.find_one({}, sort=[("$natural", -1)])
-        result.pop("_id")
 
+        if not result:
+            raise NoCollegeMetricsFoundError()
+
+        result.pop("_id")
         return CollegeMetrics(**result)
 
     @classmethod
     def get_all(cls) -> List[CollegeMetrics]:
         results = cls.db.college_metrics.find({}).sort([("$natural", -1)])
+
+        if not results:
+            raise NoCollegeMetricsFoundError()
 
         return [CollegeMetrics(**result) for result in results]
 
