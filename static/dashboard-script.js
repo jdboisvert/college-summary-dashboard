@@ -1,14 +1,11 @@
 function getYearValues(stats) {
-    console.log(stats)
     const yearCountsStr = stats['Year Counts'];
     const yearCountsUnFormatted = yearCountsStr.split(',');
     const yearCounts = {};
 
     for (let i = 0; i < yearCountsUnFormatted.length; i++) {
-
         const values = yearCountsUnFormatted[i].split(':');
         yearCounts[values[0].replace(/[^0-9]/g, '')] = values[1].replace(/[^0-9]/g, '');
-
     }
 
     return yearCounts;
@@ -16,7 +13,6 @@ function getYearValues(stats) {
 
 function makeYearlyPieChart() {
     const newestProgramsElement = document.getElementById("newest-programs")
-
     const yearlyStats = JSON.parse(newestProgramsElement.dataset.counts.replace(/'/g, '"'));
 
     //Build an array of the values that match the key
@@ -27,8 +23,8 @@ function makeYearlyPieChart() {
         values.push(yearlyStats[year]);
     }
 
-    var ctx = newestProgramsElement.getContext('2d');
-    var myChart = new Chart(ctx, {
+    const ctx = newestProgramsElement.getContext('2d');
+    const myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: keys,
@@ -73,7 +69,32 @@ function makeLatestProgramsTablePaginate() {
 
 }
 
+function animateCounters() {
+    const counterElements = document.getElementsByClassName("counter");
+    for (const counterElement of counterElements) {
+        let startTime = null;
+        const finalNumber = parseInt(counterElement.textContent, 10);
+        const duration = 2000; // duration in ms
+        const step = ts => {
+            if (!startTime) {
+                startTime = ts
+            }
+            let progress = (ts - startTime) / duration
+
+            isNotComplete = progress < 1;
+            counterElement.textContent = isNotComplete ? Math.floor(progress * finalNumber) : finalNumber;
+            if (isNotComplete) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", function(event) {
-     makeLatestProgramsTablePaginate();
-     makeYearlyPieChart();
+    makeLatestProgramsTablePaginate();
+    makeYearlyPieChart();
+    animateCounters();
 });
