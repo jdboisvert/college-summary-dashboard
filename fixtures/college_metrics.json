@@ -1,0 +1,507 @@
+[{
+  "date": {
+    "$date": "2021-12-27T22:20:02.024Z"
+  },
+  "college": "DAWSON_COLLEGE",
+  "total_programs_offered": 80,
+  "number_of_programs": 31,
+  "programs": [
+    {
+      "name": "3D Animation & Computer Generated Imagery",
+      "modified_date": "October 19, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//3d/"
+    },
+    {
+      "name": "Accounting and Management Technology",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//accounting-and-management-technology/"
+    },
+    {
+      "name": "Anthropology",
+      "modified_date": "August 17, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//anthropology/"
+    },
+    {
+      "name": "Arts and Culture",
+      "modified_date": "August 18, 2021",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//arts-culture/"
+    },
+    {
+      "name": "Arts, Literature and Communication (ALC)",
+      "modified_date": "September 13, 2021",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//programs/creative-applied-arts/arts-literature-and-communication/"
+    },
+    {
+      "name": "Biology",
+      "modified_date": "October 19, 2020",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//biology/"
+    },
+    {
+      "name": "Biomedical Laboratory Technology",
+      "modified_date": "October 14, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//biomedical-laboratory-technology/"
+    },
+    {
+      "name": "Chemistry",
+      "modified_date": "October 1, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//chemistry/"
+    },
+    {
+      "name": "Child Studies",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//child-studies/"
+    },
+    {
+      "name": "Cinema/Video/Communications",
+      "modified_date": "August 18, 2021",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//cinema-communications/"
+    },
+    {
+      "name": "Civil Engineering Technology",
+      "modified_date": "October 13, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//civil-engineering-technology/"
+    },
+    {
+      "name": "Classics",
+      "modified_date": "August 17, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//classics/"
+    },
+    {
+      "name": "Commerce",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//commerce/"
+    },
+    {
+      "name": "Community Recreation Leadership Training",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//community-recreation-leadership-training-crlt/"
+    },
+    {
+      "name": "Computer Science Technology",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//computer-science-technology/"
+    },
+    {
+      "name": "Decolonization and Indigenization Studies",
+      "modified_date": "September 22, 2021",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//decolonization-and-indigenization-studies/"
+    },
+    {
+      "name": "Developmental Science",
+      "modified_date": "December 2, 2021",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//developmental-science/"
+    },
+    {
+      "name": "Diagnostic Imaging Technology",
+      "modified_date": "October 9, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//diagnostic-imaging-technology/"
+    },
+    {
+      "name": "Economics",
+      "modified_date": "November 19, 2015",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//economics/"
+    },
+    {
+      "name": "Electronics Engineering Technology",
+      "modified_date": "October 13, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//electronics-engineering-technology/"
+    },
+    {
+      "name": "Electronics Engineering Technology - Computer and Networks",
+      "modified_date": "August 20, 2014",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//electronics-engineering-technology/computer-networks-course-list/"
+    },
+    {
+      "name": "Electronics Engineering Technology - Telecommunications",
+      "modified_date": "August 20, 2014",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//electronics-engineering-technology/telecommunications-course-list/"
+    },
+    {
+      "name": "English",
+      "modified_date": "October 22, 2021",
+      "type": "General Education",
+      "url": "https://www.dawsoncollege.qc.ca//english/"
+    },
+    {
+      "name": "Environment and Sustainability Certificate",
+      "modified_date": "November 4, 2021",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//environment-sustainability-certificate/"
+    },
+    {
+      "name": "Environmental Science",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//environmental-science/"
+    },
+    {
+      "name": "Environmental Studies",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//environmental-studies/"
+    },
+    {
+      "name": "Explorations Science",
+      "modified_date": "October 13, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//explorations-science/"
+    },
+    {
+      "name": "French",
+      "modified_date": "October 22, 2021",
+      "type": "General Education",
+      "url": "https://www.dawsoncollege.qc.ca//french/"
+    },
+    {
+      "name": "General Social Science",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//general-social-science/"
+    },
+    {
+      "name": "Geography",
+      "modified_date": "August 23, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//geography/"
+    },
+    {
+      "name": "Geology",
+      "modified_date": "September 14, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//geology/"
+    },
+    {
+      "name": "Graphic Design",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//graphic-design/"
+    },
+    {
+      "name": "Health Science",
+      "modified_date": "October 14, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//health-science/"
+    },
+    {
+      "name": "Health Science",
+      "modified_date": "October 14, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//health-science/"
+    },
+    {
+      "name": "Hellenic Studies",
+      "modified_date": "October 7, 2021",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//hellenic-studies/"
+    },
+    {
+      "name": "History",
+      "modified_date": "June 18, 2019",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//history/"
+    },
+    {
+      "name": "Humanities",
+      "modified_date": "October 22, 2021",
+      "type": "General Education",
+      "url": "https://www.dawsoncollege.qc.ca//humanities/"
+    },
+    {
+      "name": "Illustration",
+      "modified_date": "October 14, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//illustration/"
+    },
+    {
+      "name": "Industrial Design",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//industrial-design/"
+    },
+    {
+      "name": "Interactive Media Arts",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//interactive-media-arts/"
+    },
+    {
+      "name": "Interior Design",
+      "modified_date": "August 9, 2021",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//interior-design/"
+    },
+    {
+      "name": "International Business",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//international-business-studies/"
+    },
+    {
+      "name": "Laboratory Technology - Analytical Chemistry",
+      "modified_date": "October 21, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//laboratory-technology/"
+    },
+    {
+      "name": "Languages",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//languages/"
+    },
+    {
+      "name": "Law, Society and Justice",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//law-society-justice/"
+    },
+    {
+      "name": "Liberal Arts",
+      "modified_date": "October 7, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//liberal-arts/"
+    },
+    {
+      "name": "Literature",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//literature/"
+    },
+    {
+      "name": "Marketing and Management Technology",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//marketing-management-technology/"
+    },
+    {
+      "name": "Mathematics",
+      "modified_date": "February 12, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//mathematics/"
+    },
+    {
+      "name": "Mechanical Engineering Technology - Automated Manufacturing",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//mechanical-engineering-technology"
+    },
+    {
+      "name": "Mechanical Engineering Technology - Design",
+      "modified_date": "July 28, 2014",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//mechanical-engineering-technology/design-option-course-list/"
+    },
+    {
+      "name": "Medical Ultrasound Technology",
+      "modified_date": "October 14, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//medical-ultrasound-technology/"
+    },
+    {
+      "name": "Modern Languages",
+      "modified_date": "June 14, 2018",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//modern-languages/"
+    },
+    {
+      "name": "Multidisciplinary (Methods & Others)",
+      "modified_date": "January 22, 2020",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//multidisciplinary-methods-others/"
+    },
+    {
+      "name": "Music",
+      "modified_date": "June 14, 2018",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//music/"
+    },
+    {
+      "name": "New School",
+      "modified_date": "October 22, 2021",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//new-school/"
+    },
+    {
+      "name": "North South Studies",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//north-south-studies/"
+    },
+    {
+      "name": "Nursing",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//nursing/"
+    },
+    {
+      "name": "Peace Studies",
+      "modified_date": "August 26, 2020",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//peace-centre/peace-studies-certificate/"
+    },
+    {
+      "name": "Philosophy",
+      "modified_date": "August 17, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//philosophy/"
+    },
+    {
+      "name": "Physical Education",
+      "modified_date": "October 22, 2021",
+      "type": "General Education",
+      "url": "https://www.dawsoncollege.qc.ca//physical-education/"
+    },
+    {
+      "name": "Physiotherapy Technology",
+      "modified_date": "October 13, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//physiotherapy-technology/"
+    },
+    {
+      "name": "Physics",
+      "modified_date": "August 17, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//physics/"
+    },
+    {
+      "name": "Political Science",
+      "modified_date": "June 18, 2019",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//political-science/"
+    },
+    {
+      "name": "Professional Photography",
+      "modified_date": "October 13, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//professional-photography/"
+    },
+    {
+      "name": "Professional Theatre (Acting)",
+      "modified_date": "September 7, 2021",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//professional-theatre/"
+    },
+    {
+      "name": "Psychology",
+      "modified_date": "October 7, 2020",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//psychology/"
+    },
+    {
+      "name": "Psychology",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//psychology/"
+    },
+    {
+      "name": "Pure and Applied Science",
+      "modified_date": "October 14, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//pure-applied/"
+    },
+    {
+      "name": "Pure and Applied Science",
+      "modified_date": "October 14, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//pure-applied/"
+    },
+    {
+      "name": "Radiation Oncology",
+      "modified_date": "January 12, 2021",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//radiation-oncology/"
+    },
+    {
+      "name": "Reflections",
+      "modified_date": "September 19, 2019",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//reflections/"
+    },
+    {
+      "name": "Religion",
+      "modified_date": "August 17, 2021",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//religion/"
+    },
+    {
+      "name": "Social Science",
+      "modified_date": "October 7, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//general-social-science/"
+    },
+    {
+      "name": "Social Service",
+      "modified_date": "October 8, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//social-service/"
+    },
+    {
+      "name": "Sociology",
+      "modified_date": "June 18, 2019",
+      "type": "Discipline",
+      "url": "https://www.dawsoncollege.qc.ca//sociology/"
+    },
+    {
+      "name": "Studio Arts",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//studio-arts/"
+    },
+    {
+      "name": "Travel and Tourism",
+      "modified_date": "October 7, 2020",
+      "type": "Profile",
+      "url": "https://www.dawsoncollege.qc.ca//travel-tourism/"
+    },
+    {
+      "name": "Visual Arts",
+      "modified_date": "October 7, 2020",
+      "type": "Program",
+      "url": "https://www.dawsoncollege.qc.ca//visual-arts/"
+    },
+    {
+      "name": "Women's Studies",
+      "modified_date": "March 16, 2021",
+      "type": "Special Area of Study",
+      "url": "https://www.dawsoncollege.qc.ca//womens-gender-studies/"
+    }
+  ],
+  "number_of_general_studies": 4,
+  "number_of_students": 11000,
+  "_id": {
+    "$oid": "61ca8262fc2af629c17643cb"
+  },
+  "number_of_special_studies": 7,
+  "number_of_faculty": 826,
+  "number_of_disciplines": 18,
+  "total_year_counts": {
+    "2014": 3,
+    "2015": 1,
+    "2018": 2,
+    "2019": 4,
+    "2020": 45,
+    "2021": 25
+  },
+  "number_of_profiles": 20
+}]

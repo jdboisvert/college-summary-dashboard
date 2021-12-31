@@ -163,8 +163,6 @@ class DawsonCollegeWebsiteScrapper:
         programs_data_frame["year"] = years
         total_year_counts = programs_data_frame["year"].value_counts()
 
-        print(total_year_counts.to_dict())
-
         CollegeMetricsDataStore.save(
             college_metrics=CollegeMetrics(
                 date=datetime.now(),

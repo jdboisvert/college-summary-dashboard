@@ -2,7 +2,6 @@ from flask import Flask, render_template
 from flask_pymongo import PyMongo
 
 from utils.datastore import CollegeMetricsDataStore
-from utils.web_scrappers import DawsonCollegeWebsiteScrapper
 
 app = Flask(__name__, static_url_path="/static")
 
@@ -20,8 +19,6 @@ def about():
 
 @app.route("/", methods=["GET"])
 def dashboard():
-    # TODO Used just for initial testing to be removed.
-    # DawsonCollegeWebsiteScrapper().scrap()
     college_metrics = CollegeMetricsDataStore.get_latest()
 
     return render_template("dashboard.html", college_metrics=college_metrics)
