@@ -1,10 +1,10 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from constants import College
 from utils.dataclasses import CollegeMetrics, Program
 
 
-def test_number_of_students_per_faculty_students_higher_than_faculty():
+def test_get_latest_none():
     college_metrics = CollegeMetrics(
         college=College.DAWSON_COLLEGE.name,
         date=datetime.now(),
