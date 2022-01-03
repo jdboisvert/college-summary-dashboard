@@ -1,3 +1,4 @@
+import click
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -31,6 +32,13 @@ background_scheduler.add_job(scrap_website, "interval", hours=12)
 
 background_scheduler.start()
 atexit.register(lambda: background_scheduler.shutdown())
+
+
+@app.cli.command("scrap")
+def scrap():
+    click.echo("Scrapping Dawson College website ...")
+    DawsonCollegeWebsiteScrapper().scrap()
+    click.echo("Scrapping Complete.")
 
 
 @app.route("/about", methods=["GET"])
