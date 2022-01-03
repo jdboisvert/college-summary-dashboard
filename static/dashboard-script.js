@@ -40,7 +40,6 @@ function makeYearlyPieChart() {
 }
 
 function makeLatestProgramsTablePaginate() {
-    // TODO remove jQuery logic here.
     $('#latest-programs').after('<div id="nav"></div>');
     var rowsShown = 7;
     var rowsTotal = $('#latest-programs tbody tr').length;

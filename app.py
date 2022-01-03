@@ -14,7 +14,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_url_path="/static")
-
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongodb_client = PyMongo(app)
@@ -27,7 +26,9 @@ def scrap_website():
     logger.info("College scrapping completed with no errors.")
 
 
-background_scheduler = BackgroundScheduler(daemon=True)
+background_scheduler = BackgroundScheduler(
+    daemon=True, timezone=os.getenv("SCHEDULER_TIMEZONE")
+)
 background_scheduler.add_job(scrap_website, "interval", hours=12)
 
 background_scheduler.start()
