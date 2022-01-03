@@ -37,7 +37,7 @@ atexit.register(lambda: background_scheduler.shutdown())
 @app.cli.command("scrap")
 def scrap():
     click.echo("Scrapping Dawson College website ...")
-    DawsonCollegeWebsiteScrapper().scrap()
+    scrap_website()
     click.echo("Scrapping Complete.")
 
 

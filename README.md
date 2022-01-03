@@ -1,5 +1,5 @@
 # College Summary Dashboard
-A simple web application that shows you the latest stats for a given school (such as [Dawson College](https://www.dawsoncollege.qc.ca/)).
+A simple web application that shows you the latest stats for a given school (such as [Dawson College](https://www.dawsoncollege.qc.ca/)). This will also scrap the websites in the background every 12 hours.
 
 ## Getting started
 
@@ -39,6 +39,13 @@ Simply copy `.env-example` to a file named `.env` and set the variables as neede
 ### Run application
 ```
 flask run
+```
+
+## Custom Commands
+
+### Running Dawson College Scrapper Manually
+```
+flask scrap
 ```
 
 ## Contributing
