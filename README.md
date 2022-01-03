@@ -25,11 +25,16 @@ source <path to venv>/bin/activate
 pip install -r requirements.txt
 ```
 
+
 ### Database
 This application uses [MongoDB](https://www.mongodb.com/try/download/community) to store data. Ensure to have it installed locally or have an instance to connect to before starting.
 
 #### Seeding
 Seeding is not needed but if you wish to see the dashboard with initial data simply import `fixtures/college_metrics.json` into a database called `college_dashboard_db` with a collection called `college_metrics`.
+
+### Set up Environment Variables
+
+Simply copy `.env-example` to a file named `.env` and set the variables as needed such as `MONGO_URI`.
 
 ### Run application
 ```

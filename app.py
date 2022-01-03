@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_pymongo import PyMongo
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
+import os
 
 from exceptions.dashboard import NoCollegeMetricsFoundError
 from utils import DawsonCollegeWebsiteScrapper
@@ -13,8 +14,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_url_path="/static")
 
-# TODO Make a setting
-app.config["MONGO_URI"] = "mongodb://127.0.0.1:27017/collegeDashboardDB"
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongodb_client = PyMongo(app)
 CollegeMetricsDataStore.db = mongodb_client.db
