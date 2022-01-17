@@ -1,5 +1,6 @@
 # College Summary Dashboard
-A simple web application that shows you the latest stats for a given school (such as [Dawson College](https://www.dawsoncollege.qc.ca/)). This will also scrap the websites in the background every 12 hours.
+A simple web application that shows you the latest stats for a given school (such as [Dawson College](https://www.dawsoncollege.qc.ca/)). This can also scrap the websites in the background every 12 hours.
+You can view a live demo [here](https://college-summary-dashboard.herokuapp.com/)
 
 ## Getting started
 
@@ -9,6 +10,7 @@ A simple web application that shows you the latest stats for a given school (suc
 ```
 python3 -m venv <path to venv>
 ```
+Note that Python 3.7 was used to develop this application but 3.7 or later should be fine.
 
 #### Activate
 #### Windows
