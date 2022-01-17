@@ -1,0 +1,27 @@
+college-summary-dashboard:
+  build: .
+  command: python -u app.py
+  ports:
+    - "5000:5000"
+  environment:
+    - DEBUG=True
+    - FLASK_ENV=development
+    - MONGO_URI=mongodb://127.0.0.1:27017/collegeDashboardDB
+    - SCHEDULER_TIMEZONE=America/Toronto
+  volumes:
+    - .:/college-summary-dashboard
+  links:
+    - db
+mongoimport:
+  image: library/mongo:latest
+  container_name: my-import
+  volumes:
+    - ./fixtures/college_metrics.json.json:/src/data/college_metrics.json
+  command: mongoimport --host mongodb --db collegeDashboardDB --collection college_metrics --file /src/data/college_metrics.json
+db:
+  image: mongo:latest
+  hostname: mongodb
+  ports:
+    - 27017:27017
+  depends_on:
+    - mongoimport
