@@ -26,13 +26,14 @@ def scrap_website():
     logger.info("College scrapping completed with no errors.")
 
 
-background_scheduler = BackgroundScheduler(
-    daemon=True, timezone=os.getenv("SCHEDULER_TIMEZONE")
-)
-background_scheduler.add_job(scrap_website, "interval", hours=12)
+if os.getenv("IS_SCHEDULED_SCRAPPING_ENABLED", "false").lower() in ("true", "1", "t"):
+    background_scheduler = BackgroundScheduler(
+        daemon=True, timezone=os.getenv("SCHEDULER_TIMEZONE")
+    )
+    background_scheduler.add_job(scrap_website, "interval", hours=12)
 
-background_scheduler.start()
-atexit.register(lambda: background_scheduler.shutdown())
+    background_scheduler.start()
+    atexit.register(lambda: background_scheduler.shutdown())
 
 
 @app.cli.command("scrap")
@@ -58,7 +59,3 @@ def dashboard():
         logger.error("No college metrics were found.")
 
         return render_template("empty-dashboard.html")
-
-
-if __name__ == "__main__":
-    app.run()
