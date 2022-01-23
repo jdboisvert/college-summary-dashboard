@@ -10,6 +10,7 @@ from pandas import DataFrame
 
 from constants import College
 from constants.dawson_college import PROGRAMS_LISTING_URL, MAIN_WEBSITE_URL
+from exceptions.web_scrapper import PageDetailsError
 from utils.dataclasses.dashboard import Program, CollegeMetrics
 from utils.dataclasses.dawson_college import ProgramPageData
 
@@ -32,8 +33,7 @@ class DawsonCollegeWebsiteScrapper:
         response = requests.get(url, headers=self.headers)
 
         if not response.ok:
-            # TODO Make custom exception
-            raise Exception("Could not get page details")
+            raise PageDetailsError
 
         return BeautifulSoup(response.text.strip(), "lxml")
 
@@ -95,7 +95,7 @@ class DawsonCollegeWebsiteScrapper:
                         program_url=program_url, listed_program=listed_program
                     )
                 )
-            except Exception as e:
+            except PageDetailsError:
                 logger.error(f"Error occurred while get details from {program_url}")
                 continue
 
