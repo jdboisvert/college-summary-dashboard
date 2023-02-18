@@ -36,7 +36,7 @@ if os.getenv("IS_SCHEDULED_SCRAPPING_ENABLED", "false").lower() in ("true", "1",
     atexit.register(lambda: background_scheduler.shutdown())
 
 
-@app.cli.command("scrap")
+@app.cli.command("scrape")
 def scrap():
     click.echo("Scrapping Dawson College website ...")
     scrap_website()
