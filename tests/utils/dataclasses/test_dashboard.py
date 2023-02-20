@@ -100,12 +100,12 @@ def test_programs_sorted_empty():
 def test_programs_sorted_correct_order():
     programs = [
         Program(
-            name="Test", modified_date="March 29, 2021", type="Test Type", url="url"
+            name="Test", modified_date="March 29, 2021", program_type="Test Type", url="url"
         ),
         Program(
             name="Newest Test",
             modified_date="June 26, 2021",
-            type="Test Type",
+            program_type="Test Type",
             url="url",
         ),
     ]

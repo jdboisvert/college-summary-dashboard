@@ -8,7 +8,7 @@ A simple web application that shows you the latest stats for a given school (suc
 brew install pyenv pyenv-virtualenv
 echo """
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv init --path)"
+eval "$(pyenv init --b)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 """ > ~/.zshrc
