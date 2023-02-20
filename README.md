@@ -1,6 +1,8 @@
 # College Summary Dashboard
 A simple web application that shows you the latest stats for a given school (such as [Dawson College](https://www.dawsoncollege.qc.ca/)). This can also scrap the websites in the background every 12 hours.
 
+![Animated gif demoing the web app dashboard.](demo.gif)
+
 ### Getting started
 
 ```shell
