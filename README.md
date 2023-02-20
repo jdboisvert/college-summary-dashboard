@@ -49,6 +49,18 @@ Simply copy `.env-example` to a file named `.env` and set the variables as neede
 flask run
 ```
 
+## Quick Start 
+These steps are to quickly set up the application and get it running.
+
+1. The quickest and easier way to get started is to set up a database on MonggoDB Atlas and set the `MONGO_URI` in the `.env` file to the connection string. You can also set up a local instance of MongoDB and set the `MONGO_URI` to `mongodb://localhost:27017/college_dashboard_db`.
+
+2. Run the command `flask scrape` to scrape the website and populate the database.
+
+3. Run the command `flask run` to start the application.
+
+4. Navigate to `http://localhost:5000/` to see the dashboard in action.
+
+
 ## Custom Commands
 
 ### Running Dawson College Scrapper Manually

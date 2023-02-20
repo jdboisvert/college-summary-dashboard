@@ -14,9 +14,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_url_path="/static")
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
-mongodb_client = pymongo.MongoClient(app.config["MONGO_URI"])
+mongodb_client = pymongo.MongoClient(os.getenv("MONGO_URI"))
 db = mongodb_client.get_database('collegeDashboardDB')
 CollegeMetricsDataStore.db = db
 
