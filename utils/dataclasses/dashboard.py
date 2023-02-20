@@ -2,7 +2,14 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 
-from dawson_college_pyscrapper.models import Program
+
+@dataclass(frozen=True)
+class Program:
+    name: str
+    modified_date: str
+    type: str
+    url: str
+
 
 @dataclass(frozen=True)
 class CollegeMetrics:
